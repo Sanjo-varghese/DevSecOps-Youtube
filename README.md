@@ -22,7 +22,8 @@
 
 # Build and Deploy a Modern YouTube Clone Application in React JS with Material UI 5
  # Architecture
-![gitlab](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/6ed0ac05-5979-4613-bc61-8e3c317c9bb1)
+![gitlab](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/1d149f85-0c80-48d8-8b62-e18552b371f1)
+
 
 ![YouTube](https://i.ibb.co/4R5RkmW/Thumbnail-5.png)
 
@@ -45,7 +46,9 @@
 - Open a new tab in the browser and search for rapidapi.com
 - It will automatically provide your mail and select a mail to create an account
 
-![rapidapi](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/540b11ae-e639-4635-86f1-5f0046f9f952)
+
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/5e78cde7-76ff-465e-b42a-2132e88e467f)
+
 
 **Account is created**
 - Now in the search bar search for YouTube and select YouTube v3
@@ -54,25 +57,31 @@
 **Copy API and save it for further use at the docker stage.**
 - docker build --build-arg REACT_APP_RAPID_API_KEY=<API-KEY> -t ${imageName} .
 
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/1a0afc79-7383-48ed-a57f-443f1490b7d6)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/e651a0c5-f692-4b51-9224-40c927781cd3)
+
 
 
 # Step 2: Create a Repository and push it to GitLab
 Go to GitLab.com and login to your account
 - Click on New Project
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/bfb40a50-a592-4872-9a13-a2e54e3330fd)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/efb323a1-734a-4207-a7a7-6f8ff7dab46d)
+
 Click on Create Blank Project
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/dfe9b4c5-e707-4530-8eee-3a8f332ad60e)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/6ca9501f-78c8-4e3a-987f-0c62bd9d68b8)
+
 
 - Provide a name for the Project
 - Keep Visibility to the public
 Uncheck the Readme and create the Project.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/7fb4dfeb-a862-4b3a-bcc2-5dded7f07628)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/5ec5d89d-66ef-4b7b-94e9-bb546dac807f)
+
 
 Use the below commands to push code to GitLab
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/1e084232-dd4c-44c9-aaf7-2298c955f4f8)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/1a067416-23a8-4a87-ad01-8219b21a291e)
+
 Files pushed to GitLab.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/1bc545b1-26ee-4080-b9b7-50ac6665e0b1)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/0c417112-7818-4b01-9873-5e4be5dc9df3)
+
 
 # Step 3: Launch an Ec2 instance and run Sonarqube on it
 
@@ -87,7 +96,8 @@ Create a new security group. Add rules for **HTTP, and HTTPS,** and open all por
 **Launch Instance:** Review and launch the instance.
 Access Your Instance: Use SSH to connect to your instance with the private key.
 Keep in mind, that opening all ports is not recommended for production environments; it's just for educational purposes.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/7420ed7f-4d4c-47a6-8b49-2504578aa0c6)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/b096d9d1-f2b7-4e1e-ad3e-690471121ac6)
+
 
 # Connect to Your EC2 Instance and install docker:
 Run the below commands to install the docker
@@ -105,24 +115,31 @@ Run this command on your EC2 instance to create a SonarQube container:
 ```sh 
 docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
 ```
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/bb61b196-493d-4e52-853c-bbaf1bc4b9a9)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/4ec10b2a-590b-4a9f-b6a5-127230c23210)
+
 Now copy the IP address of the ec2 instance
 ```sh
 <ec2-public-ip:9000>
 ```
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/75882e04-7664-401a-a82d-1a6415fbed09)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/bbb9bb5d-0897-4849-8c47-30088a709c5e)
+
 Enter username and password, click on login and change password
 
 ```sh
 username admin
 password admin
 ```
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/8ef2a0af-ab08-4be8-809e-6b0b632ed809)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/7a76f0de-6326-4b44-b9b3-3968eb80559e)
+
+
 Update New password, This is Sonar Dashboard.
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/7a25fe1d-155a-4d11-8af0-3dd12d72bf7c)
+
 
 **Step 4A:** Create a **.gitlab-ci.yml** File.
 Now go to GitLab click on '+' and click on Newfile
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/706f0430-21a5-43f0-b505-1efbc6eacd88)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/a35ce19b-b968-431a-99b9-569c9e0453ba)
+
 File name .gitlab-ci.yml
 Content
 
@@ -138,75 +155,103 @@ Install dependecy:
         - npm install
 ```
 
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/935b4e73-c6cb-4843-97a9-384e37b7b801)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/5f40ad99-576a-4661-b66d-acef4c9adc69)
+
 
 Commit the changes and it will automatically start the build
 - Now click on Build and Pipelines
 
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/7abcd6a3-c85b-47e4-91e2-be8c3591acaa)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/9773163b-34d2-45a9-b71a-7c3e7dad5699)
+
 
 - Now click on Running.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/3a53782c-d46c-4bdd-9ce1-fdf23bf20b9f)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/31910a0f-3990-4386-b7ee-be733dd09f36)
+
 - Click on Install dependency
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/b9aa838f-06ff-49c8-a280-b4f978ba5502)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/b730603c-a97a-4cfd-b32b-ff83f4e6503d)
+
 - You will build output
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/2aa56159-a48e-4bf2-9668-a62b1a743707)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/db2a7d36-a03f-4754-aba3-420c70bec3fe)
+
 - Now add the Sonarqube stage to the pipeline
 - Go to the Sonarqube dashboard and click on Manually.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/67bec914-b0df-435d-bc82-c74f49f0a640)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/497c6739-9b9d-4d4c-8911-a1b538afb8c3)
+
 - Provide the name of the Project and click on Setup.
 ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/d1018987-dc72-490e-910a-74042006f780)
 - Select the CI tool as GitLab CI.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/5047f9b7-9308-4874-a5a2-df4f68453761)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/2f5cbf03-493c-47ee-90c1-e3ebbd17e959)
+
+
 - Select Other because we are using the JS App
 - It will provide code and we need to create a file inside our repo
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/1535558c-d0b3-435f-8797-ba2f5421be24)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/7f3e516e-fc18-4301-9e37-cec76d099e69)
+
 - Go to Gitlab and click on + and Newfile.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/8b776643-36c2-4278-a974-74f7d436e12b)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/334fc64d-6e8b-4e31-afa1-efea63a00e29)
+
 - Filename is sonar-project.properties
 - Paste the content that you got from Sonarqube
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/a5779443-4166-4b90-a0cd-696f6feff31c)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/3176ac6c-670d-4c95-94f0-a0dd0eeb086e)
+
 - The file looks like this and click on commit changes
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/4596ac06-d137-4dfd-809a-f8d400e78d65)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/7706320d-2df9-4853-b0b3-ee4f53aae943)
+
 - Go to Sonarqube and click on continue.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/ef458eb7-5cd7-4dee-a635-ab60b1280fd9)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/9d917ebd-896c-4846-a0c0-05f81274a19f)
+
 - Now it will provide Variables to add to our GitLab.
 # Step 4B: Add the required variables for the project.
 **Variables Generated**
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/86b38191-018d-4f6f-ad1f-81aa41e5275f)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/c80354a1-6ee1-47d1-aab5-1c150dcae125)
+
 - Now go to GitLab
 - Click on settings and CI/CD
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/6ef2ccab-46c9-4a85-a6fb-66f38befd2f5)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/e15e8d93-0b77-445e-9443-3e2bf0cb6763)
+
 - Click on Expand in variables
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/96c6f1ab-944c-4048-a94d-a3119bb5c155)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/6cef499c-371b-4e2b-a4eb-b67d68296e91)
+
 - Click on Add variable
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/b76feecb-801f-416a-a706-2eb145b633a5)
+  ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/543e106b-d698-401d-adc9-e41d275c4f01)
+
 - Now go back to Sonarqube and copy the Key
 - Click on Generate a token
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/8088b52d-1f08-40e6-bca9-4aaface3f399)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/f177701b-ccaa-4c55-8547-34e9443220b7)
+
 - Again Click on Generate
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/0acea737-5ca8-4078-a48d-c45dc41a4495)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/f856e28d-f98d-4f9b-8eb3-1b933486673c)
+
 - Copy the token.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/9deec478-3bab-4d7f-93f7-098848f6cee4)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/2cf64211-516d-41d7-ae98-3dd9d588c5d2)
+
 - Now come back to GitLab and add them like the below image and click on add variable.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/06c6fcf1-ebb5-4ab3-ba76-471971684e55)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/f152003a-49f9-406f-9ea3-296647a1cbf2)
+
 - Sonar token is added
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/6199cb6d-6c0d-404b-a5fd-d7a5bad02b20)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/45978940-5c8a-489f-ac47-eff5acd1320f)
+
 - Now go to the Sonarqube Dashboard again
 - Let's add another variable, copy them
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/82bd3319-211f-4527-9059-8171777b7e78)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/257b798f-fed9-4996-bf7c-fc5f9224866c)
+
 - Now go to GitLab and click on Add variable
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/0eff5e5c-a96c-48dd-846f-f0f373751af0)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/5b2e6d00-72d2-404a-a4c8-f33c3435a81f)
+
 - Add the copied values like the below image
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/ab016db2-2750-4bdd-8d6e-80d7a27c5af7)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/81bac4aa-52e4-43f7-ba0d-75f3b8a77359)
+
 - Two variables were added.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/4bcbb17e-1ca7-45e8-b786-88e9c1cec857)
+  ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/15585d7a-6d8d-486a-962e-9a53fe7d24ef)
+
 
 - Now go back to the Sonarqube Dashboard
 - Click on continue
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/674c86ca-e98b-4276-9247-db7469a5ca55)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/bbd1379f-5c23-4983-826b-1771e260ea3a)
+
 - It will provide and CI configuration file copy it and use it inside our **.gitlab-ci.yml file**
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/8a5763b1-de78-4503-b7e3-0c82f64a786d)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/53a2888e-66de-44b8-ba6c-ef34d6ca5b57)
+
 - Now go back to GitLab and edit the .gitlab-ci.yml file
 - Full file (update with your content)
 
@@ -241,17 +286,21 @@ sonarqube-check:
     - main
 ```
 
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/44f4eb45-b8ad-431e-8c49-5ea9c5ab6da7)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/b7df251e-4b40-457f-bb20-6d083a0f966c)
 
 - Commit changes and it will automatically start the build.
 - Click on Build --> Pipelines
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/360e6bf8-3711-47a3-9359-f41fa16f6f8d)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/4ca219b4-dcbe-43fb-b04b-109c8ab44a37)
+
 - Click on Running
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/884e0755-0232-44b7-b359-efe7df36208a)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/27bf464a-6d04-4d4f-a968-4611b351e0f4)
+
 - Now click on Sonarqube-check
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/7576136f-639c-4511-83dc-928c15376511)
+  ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/54010150-9287-43ff-8974-52ceee49ecf4)
+
 - Build output
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/3fb4d755-38b2-473b-a38e-3bcb6774f8ae)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/0682db8d-bf4b-4fab-9c35-24632f95d0cd)
+
 
 - Now add the next stage of the **Trivy file scan**
 - Update the **.gitlab-ci.yml** file
@@ -296,46 +345,59 @@ Trivy file scan:
     - trivy fs .
 ```
     
-   ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/7639ae06-4962-4254-b762-b4d1afe39a71)
+  ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/72161e6b-be16-4c26-8348-b12ff8a83557)
+
 
 - Commit changes and go to pipeline stages
 - Click on the **Trivy file scan**
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/b1e59e9c-0a4e-43e6-ad2a-f466391a7456)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/48b513be-7d9d-4a5c-928d-188ed6288910)
+
 
 - Build output
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/9fd8bfbc-b84e-4297-8f94-d6a2a16b6fd5)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/722a7310-88fe-4b00-89fd-182a25c21007)
+
 
 - Add the Docker build and push stage
 - Before that Add docker credentials to GitLab Variables as secrets.
 - Go to the docker hub and create a Personal Access token
 - Click on your profile name and Account Settings
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/cb442faa-a10f-4ae8-adb3-aceb7a604a70)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/2aadafa8-c98e-4a1b-a255-917d376e0628)
+
 - Now click on Security --> New Access Token
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/53948d33-3efd-44ef-bc8a-7447353b81d2)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/5fef05bc-e5e7-4219-8d0c-b760bf3a777e)
+
 
 - Provide a name --> Generate
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/25c82c92-6dbf-4a90-ad7d-56b1ec6ee281)
+  ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/baafd730-86ec-4491-b677-cfabd3422004)
+
 
 - Now copy the token and keep it safe
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/b66a359e-90ac-4475-a788-bfc73696fe11)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/8fe6051c-e0bf-45eb-aa14-63c3c4a2982d)
+
 
 - Now go back to Gitlab
 - Click on settings and CI/CD
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/1ed29703-d51c-4b89-b0be-e86a90424828)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/66dc7615-fab3-4957-953f-1532c2ede036)
+
 - Click on Expand in variables
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/45bd01f5-4349-409c-a983-d8d44fe102d3)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/de5c7805-7b31-4f56-9651-2b85ef52a62a)
+
 - Click on Add variable
 - Use your DockerHub username in value and Add variable
 - Key DOCKER_USERNAME
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/0ab45914-bb7a-4188-92de-c57f197e94da)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/939ea818-87f2-49ae-bb8d-5b1f75cc3a01)
+
 - Click on Add variable again
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/9bbc83e3-014f-4d8b-9639-d096dffcad07)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/cfca5f80-5e62-4d5a-bb7d-3395f92b4f4a)
+
 
 - Key DOCKER_PASSWORD
 - For value use the Generated Personal Access token and add a variable.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/2f15be46-d579-426e-aaa3-be714a9f2354)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/4e4a97e3-5ba0-4978-9f7a-4b9dca9224cc)
+
 - Variables added.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/455eb575-6e9d-4f7b-a00b-4becbdc26c04)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/abd36556-9055-4a2f-a169-44bd63b3373d)
+
 - Now add the below stage to the Configuration .gitlab-ci.yml file
 - Added Docker and Trivy image scan stages
 
@@ -401,37 +463,52 @@ Scan image:
     - trivy image sanjovarghese/youtubev1:latest
 ```
 - Added stages
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/fb048833-469b-4bf1-869f-f7b7e7dbc170)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/1dbeef45-5338-4f68-95d6-c0c49af64d13)
+
 - Commit changes and it will automatically start building.
 - Go to Pipelines view
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/887aadc6-c7ed-4d99-8330-b24864f24c6f)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/24efaa4f-1e53-4b0d-8301-275bf8929d35)
+
 - Now click on Docker build and push
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/72d369fa-b017-41fc-b4ec-3e7cdb245ba9)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/03bff29c-6765-442b-a156-faa5196c5aff)
+
 - Build view
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/0487b2ba-9c1e-43b4-8398-7592a6d8bffd)
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/91eaad63-4082-4638-9f26-560f69273e44)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/cd46c3b0-eb14-4b85-a999-6e8fe7d31271)
+
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/8a566070-876e-4955-a8fd-add500081fa6)
+
 **Go to Dockerhub and see the image**
 
-![ce](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/9d2be298-8cae-4766-b4f6-646574bb1e22)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/aabe22b3-893e-4399-b06b-fc77e52fdba8)
+
 - Now come back to GitLab and click on Trivy image scan
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/0ed89e56-4b23-411a-a0c7-797c3cea5322)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/3d890943-2dee-426f-9e87-51e420279ecf)
+
 - Output raw
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/08669142-7353-442a-b81b-0c4995b32172)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/1914fe6f-0049-45ed-b765-1d96cff11481)
+
 # Step 5: Install Gitlab Runner on Ec2
 - Go to GitLab and Click on Settings and CI/CD
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/8f1f20ae-4540-471f-b74a-2cc0a112906c)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/24965743-6c47-4c0e-b66f-d712195dcf75)
+
+
 - Click on Expand at Runners.
-  ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/95d686c7-43d3-4f0a-bfce-9fcbc3ddf1ba)
+ ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/e7b59ea4-f3c5-4ba6-8c66-2a4b124bb533)
+
   - Click on Three dots and then click on Show Runner installation.
- ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/204a4325-febe-4f11-afcf-3236c382311c)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/43df3419-a4da-4137-a7dc-62f3e3fd37ba)
+
 - Click on Linux and amd64 and copy the commands
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/099584a9-71d8-44f6-a81b-d897e9ac73a8)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/47e236c7-d084-4baf-880c-9230f929658b)
+
+
 - Now come back to Putty or Mobaxtreme
 - Create a new file
 ```sh
 sudo vi gitlab-runner-installation
 ```
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/77e249be-482c-4cd9-ad00-f44bd8b86da4)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/7a23d1b8-0aa8-45f9-a191-04179df38929)
+
 - Paste the below commands into it
 # Download the binary for your system
 ```sh
@@ -451,23 +528,29 @@ sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/
 sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
 sudo gitlab-runner start
 ```
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/e5bb7915-4181-4a2c-a8bc-0004023da73a)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/cd8df765-422d-4942-a8a1-ab2f5385cd14)
+
 - Provide executable permissions and run the script
 ```sh
 sudo chmod +x <file-name>
 ./<file-name>
 ```
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/a1ee8cd2-530c-48cf-aef9-706cc94e3b2e)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/38837c42-91d4-484c-8b66-ab7885e444ed)
+
 - Installation completed
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/708fc89a-065e-4980-b44a-41f3b7e76d44)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/e99d9d71-ceb3-4015-8305-5908b7d86831)
+
 - Start the GitLab runner
 ```sh
 sudo gitlab-runner start
 ```
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/fdebaa78-9210-4a45-a653-0b9490e206ab)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/a7948d6e-e0e6-4f04-b69c-03b634713aa4)
+
 - Now run the below command or your command to register the runner
 - Update the token is enough
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/1670b5cf-550e-4690-94c8-4594efde0144)
+  ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/c95c8fc9-45db-441c-a979-f6eaafb686a1)
+
+
 ```sh
 sudo gitlab-runner register --url https://gitlab.com/ --registration-token <token>
 ```
@@ -478,7 +561,7 @@ sudo gitlab-runner register --url https://gitlab.com/ --registration-token <toke
 - 4.	Tags also and you can use multiple tags by providing a comma after each tga
 - 5.	Maintenance note is just optional
 - 6.	For executors use Shell
- ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/439f8624-c287-44d1-80f4-ab4f87656e0b)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/9e22768c-688c-41b3-8a2c-48a32eedf7c7)
 
 - Runner added successfully.
 - Start the GitLab runner
@@ -486,21 +569,27 @@ sudo gitlab-runner register --url https://gitlab.com/ --registration-token <toke
 ```sh
 sudo gitlab-runner start
 ```
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/227e6296-3f73-48ea-8dfd-c97d5652f9b8)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/960fd7ba-9fc8-4cc9-b354-98eb8f8d3e16)
+
 
 - Run the GitLab runner
 ```sh
 sudo gitlab-runner run
 ```
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/50d1e59c-f4ba-4991-819c-f830f1701347)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/007c416e-82fa-4ce0-af5b-c7461db3049d)
+
 - Go to GitLab and refresh the page once or click on Enable for this project
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/b38e8a70-14fa-4f0a-8b9d-e7b9f7aa3e43)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/515ed40b-532e-4914-99fa-9f9a9d08846d)
+
 - Now the runner is active and waiting for jobs
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/a703f58d-db0a-41f2-a71b-73da2a664b04)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/42087bd6-8bcd-406a-893f-5f4440ded1ee)
+
 - Click on the Pencil mark to edit
-  ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/5f9f9131-744f-4c06-a2be-b864ae1ebb31)
+  ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/dbb1bb40-2846-46bc-95a1-0ac305c467fe)
+
 - Click on the Check box to indicate whether this runner can pick jobs without tags.
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/e3fffb3a-5e57-4dbe-b76d-c219c80af70f)
+  ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/9270b768-6464-449f-8776-ccb664567d71)
+
 - Click on save changes.
 # Step 6: Run the Application on the Docker container
 - Now edit the **.gitlab-ci.yml**file for the deploy stage
@@ -554,7 +643,7 @@ Docker build and push:
     - docker build --build-arg REACT_APP_RAPID_API_KEY=f0ead79813mshb0aa7ddf114a7dap1adb3djsn483b017de1a9 -t youtubev1 .    
     - docker tag youtubev1 sanjovarghese/youtubev1:latest
     - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    - docker push sevenajay/youtubev1:latest
+    - docker push sanjovarghese/youtubev1:latest
 Scan image:
   stage: trivy image scan
   image:
@@ -570,23 +659,33 @@ deploy:
     - docker run -d --name youtube -p 3000:3000 sanjovarghese/youtubev1:latest
 ```
 
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/93b28545-f7b1-4ca8-b6ad-4a0fa2086e84)
+
 
 - Commit changes, it will automatically start to build
 - Click on Build --> Pipelines
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/653978bb-29ce-4b89-803f-b52a6082f9a3)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/a87fcebc-17c0-46b1-888b-512394539259)
+
+
 - Click on Running
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/b35f5f27-0463-41c0-b2f0-0e44b57ecdca)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/6a49e1b9-894e-474f-812f-e1d93b4e0df7)
+
 - The last stage is added to the Pipeline
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/f2832835-caf7-4243-bede-3f5f190a459a)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/3d26ffa0-d45f-4bea-a91c-d26a9a3b5cb5)
+
 - If you get an error like this
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/e6a8727c-5b8b-4689-80a5-da389a4f545f)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/271eecf3-4b85-4fba-96e7-8e014dc0b979)
+
 - Go to GitLab and click on deploy job
 - Let's see what is the error
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/350449af-7b35-461f-a75c-b11953bb8317)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/5d3bdf0f-1bd9-42d0-b941-b027d5f4dafe)
+
 - If you get an error like this, click on that link
-![cerrr](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/bbff8ab5-8947-40cc-a65a-b118e99c7db2)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/d821ddd3-72a7-4bf9-ada0-5e0573b2d597)
+
 - It will open a new tab and provide a solution for that
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/9f4a4b3e-df45-4832-8c72-f745e40b2528)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/5bd15164-ffa4-40cf-8dcd-69beeb2b6467)
+
 
 - Now go to Mobaxtreme and stop the Runner
 - Go to root and use the below commands
@@ -594,18 +693,22 @@ deploy:
 sudo su
 sudo vi /home/gitlab-runner/.bash_logout
 ```
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/c2705f8d-bb76-4565-8419-9631895f9b93)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/18147447-53f8-4cfe-8828-55c89be0c3b2)
+
 
 - You will see file like this
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/39ac68f4-827c-4000-aafb-6e579c5c7af6)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/b22d1c22-4bc2-47e1-a28e-62afc5430be9)
+
 - Comment them
- ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/b2fa5b04-a913-49e3-8192-4feef01c837b)
+ ![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/3cbc6106-184d-4eae-91d2-38b504db2f72)
+
 - Save and exit from that file and restart GitLab runner
 ```sh
 sudo gitlab-runner restart
 ```
 exit #from root
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/f1043cf5-b0ce-482f-bf7c-69efccb21a9b)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/c2c89d0c-95db-45a4-a00b-99f1fc71139e)
+
 
 - Now start and Run the GitLab runner
 ```sh
@@ -613,17 +716,24 @@ sudo gitlab-runner start
 sudo gitlab-runner run
 ```
 
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/4262dbd5-3f53-46d2-8436-bce60294e703)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/70f484f8-d1a5-4888-9f34-2cdf0df5ac91)
+
 - Now go to GitLab --> Build --> Pipelines
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/b32966b8-25ca-4abc-b5e3-df6982cc6a2b)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/c4745183-fd20-49ed-a010-8c11c7aea91f)
+
 - Click on Run Pipeline
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/ebcd61ac-d10d-40f2-811f-4cd5cc215681)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/4ab75a89-9340-4ec8-8e7d-349619ebdce5)
+
 - Again Click on Run Pipeline
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/0e31fdb5-6d30-447f-9ed2-e2f3e3a1a18e)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/991f6cd7-0f29-42b9-be0d-41824783f939)
+
 - Build completed and click on Deploy job
-![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/d6fe3061-19ff-4e89-b77f-e3d1203c3937)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/9aae772e-b38a-4633-83d0-0dab641b573e)
+
+
 - See the output it ran a container on ec2
-![vgy](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/e8d19257-2e9b-4c62-9fd6-1c3397df256a)
+![image](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/a85afefb-b6fc-4976-b106-5fda308f5a20)
+
 - Now go to MobaXtreme or Putty and Provide the below command to see running containers.
   
 ```sh
@@ -637,7 +747,8 @@ docker ps
 ```sh
 <Public-ip:3000>
 ```
-![ttyyy](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/f58b8f53-d8b4-47e5-bb2b-3578b3850d1c)
+![ttyyy](https://github.com/Sanjo-varghese/DevSecOps-Youtube/assets/116708794/912320cb-4cce-4021-84af-f5ee0a41dac5)
+
 
 # Step 8: Termination
 - 1.	Delete the personal Access token of the docker.
